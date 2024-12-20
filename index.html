@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blooket Game Modes with Hacks</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #121212;
+            color: #e0e0e0;
+            text-align: center;
+        }
+        #container {
+            width: 100%;
+            max-width: 400px;
+            padding: 20px;
+            background-color: #1e1e1e;
+            border: 1px solid #333;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        #title {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .game-mode-button, .hack-button {
+            display: block;
+            padding: 10px 20px;
+            margin: 10px auto;
+            border: none;
+            background-color: #3a4a66;
+            color: white;
+            cursor: pointer;
+            border-radius: 4px;
+            width: 100%;
+        }
+        .game-mode-button:hover, .hack-button:hover {
+            background-color: #2e3d57;
+        }
+        #hack-buttons {
+            display: none;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="container">
+    <h2 id="title">Select a Blooket Game Mode</h2>
+    
+    <!-- Buttons for Game Modes -->
+    <button class="game-mode-button" onclick="showHacks('GameMode1')">Game Mode 1</button>
+    <button class="game-mode-button" onclick="showHacks('GameMode2')">Game Mode 2</button>
+    <button class="game-mode-button" onclick="showHacks('GameMode3')">Game Mode 3</button>
+    <button class="game-mode-button" onclick="showHacks('GameMode4')">Game Mode 4</button>
+
+    <!-- Hack Buttons (Hidden Initially) -->
+    <div id="hack-buttons">
+        <button class="hack-button" onclick="copyToClipboard('Hack Code for GameMode1')">Copy GameMode1 Hack Code</button>
+        <button class="hack-button" onclick="copyToClipboard('Hack Code for GameMode2')">Copy GameMode2 Hack Code</button>
+        <button class="hack-button" onclick="copyToClipboard('Hack Code for GameMode3')">Copy GameMode3 Hack Code</button>
+        <button class="hack-button" onclick="copyToClipboard('Hack Code for GameMode4')">Copy GameMode4 Hack Code</button>
+    </div>
+</div>
+
+<script>
+// Function to show hack buttons for the selected game mode
+function showHacks(gameMode) {
+    document.getElementById('hack-buttons').style.display = 'block';
+    let buttons = document.querySelectorAll('.hack-button');
+    buttons.forEach(button => {
+        // Hide all buttons initially
+        button.style.display = 'none';
+    });
+
+    // Show only the corresponding hack button
+    if (gameMode === 'GameMode1') {
+        document.querySelector('button[onclick="copyToClipboard(\'Hack Code for GameMode1\')"]').style.display = 'block';
+    } else if (gameMode === 'GameMode2') {
+        document.querySelector('button[onclick="copyToClipboard(\'Hack Code for GameMode2\')"]').style.display = 'block';
+    } else if (gameMode === 'GameMode3') {
+        document.querySelector('button[onclick="copyToClipboard(\'Hack Code for GameMode3\')"]').style.display = 'block';
+    } else if (gameMode === 'GameMode4') {
+        document.querySelector('button[onclick="copyToClipboard(\'Hack Code for GameMode4\')"]').style.display = 'block';
+    }
+}
+
+// Function to copy hack code to clipboard
+function copyToClipboard(hackCode) {
+    const textArea = document.createElement('textarea');
+    textArea.value = hackCode;
+    document.body.appendChild(textArea);
+    textArea.select();
+    document.execCommand('copy');
+    document.body.removeChild(textArea);
+    alert('Hack code copied to clipboard: ' + hackCode);
+}
+</script>
+
+</body>
+</html>
