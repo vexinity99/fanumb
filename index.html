@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blooket Game Modes with Hacks</title>
+    <title>Blooket Hacks</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -52,56 +52,77 @@
 <body>
 
 <div id="container">
-    <h2 id="title">Select a Blooket Game Mode</h2>
+    <h2 id="title">Select a Blooket gamemode.</h2>
     
-    <!-- Buttons for Game Modes -->
-    <button class="game-mode-button" onclick="showHacks('GameMode1')">Game Mode 1</button>
-    <button class="game-mode-button" onclick="showHacks('GameMode2')">Game Mode 2</button>
-    <button class="game-mode-button" onclick="showHacks('GameMode3')">Game Mode 3</button>
-    <button class="game-mode-button" onclick="showHacks('GameMode4')">Game Mode 4</button>
+    <button class="game-mode-button" onclick="showHacks('GameMode1')">Blook-Rush!</button>
+    <button class="game-mode-button" onclick="showHacks('GameMode2')">Cafe</button>
+    <button class="game-mode-button" onclick="showHacks('GameMode3')">Crazy-Kingdom</button>
+    <button class="game-mode-button" onclick="showHacks('GameMode4')">Crypto-Hack</button>
+    <button class="game-mode-button" onclick="showHacks('GameMode5')">Deceptive-Dinos</button>
+    <button class="game-mode-button" onclick="showHacks('GameMode6')">Fishing-Frenzy</button>
+    <button class="game-mode-button" onclick="showHacks('GameMode7')">Gold-Rush!</button>
+    <button class="game-mode-button" onclick="showHacks('GameMode8')">Racing</button>
+    <button class="game-mode-button" onclick="showHacks('GameMode9')">Tower-Defense</button>
+    <button class="game-mode-button" onclick="showHacks('GameMode10')">Tower-Of-Doom</button>
 
-    <!-- Hack Buttons (Hidden Initially) -->
     <div id="hack-buttons">
-        <button class="hack-button" onclick="copyToClipboard('Hack Code for GameMode1')">Copy GameMode1 Hack Code</button>
-        <button class="hack-button" onclick="copyToClipboard('Hack Code for GameMode2')">Copy GameMode2 Hack Code</button>
-        <button class="hack-button" onclick="copyToClipboard('Hack Code for GameMode3')">Copy GameMode3 Hack Code</button>
-        <button class="hack-button" onclick="copyToClipboard('Hack Code for GameMode4')">Copy GameMode4 Hack Code</button>
+        <button class="hack-button" onclick="fetchHackCode('GameMode1')">Copy Blook-Rush! Code</button>
+        <button class="hack-button" onclick="fetchHackCode('GameMode2')">Copy Cafe Code</button>
+        <button class="hack-button" onclick="fetchHackCode('GameMode3')">Copy Crazy-Kingdom Code</button>
+        <button class="hack-button" onclick="fetchHackCode('GameMode4')">Copy Crypto-Hack Code</button>
+        <button class="hack-button" onclick="fetchHackCode('GameMode5')">Copy Deceptive-Dinos Code</button>
+        <button class="hack-button" onclick="fetchHackCode('GameMode6')">Copy Fishing-Frenzy Code</button>
+        <button class="hack-button" onclick="fetchHackCode('GameMode7')">Copy Gold-Rush! Code</button>
+        <button class="hack-button" onclick="fetchHackCode('GameMode8')">Copy Racing Code</button>
+        <button class="hack-button" onclick="fetchHackCode('GameMode9')">Copy Tower-Defense Code</button>
+        <button class="hack-button" onclick="fetchHackCode('GameMode10')">Copy Tower-Of-Doom Code</button>
     </div>
 </div>
 
 <script>
-// Function to show hack buttons for the selected game mode
 function showHacks(gameMode) {
     document.getElementById('hack-buttons').style.display = 'block';
     let buttons = document.querySelectorAll('.hack-button');
     buttons.forEach(button => {
-        // Hide all buttons initially
         button.style.display = 'none';
     });
 
-    // Show only the corresponding hack button
-    if (gameMode === 'GameMode1') {
-        document.querySelector('button[onclick="copyToClipboard(\'Hack Code for GameMode1\')"]').style.display = 'block';
-    } else if (gameMode === 'GameMode2') {
-        document.querySelector('button[onclick="copyToClipboard(\'Hack Code for GameMode2\')"]').style.display = 'block';
-    } else if (gameMode === 'GameMode3') {
-        document.querySelector('button[onclick="copyToClipboard(\'Hack Code for GameMode3\')"]').style.display = 'block';
-    } else if (gameMode === 'GameMode4') {
-        document.querySelector('button[onclick="copyToClipboard(\'Hack Code for GameMode4\')"]').style.display = 'block';
-    }
+    document.querySelector(`button[onclick="fetchHackCode('${gameMode}')"]`).style.display = 'block';
 }
 
-// Function to copy hack code to clipboard
-function copyToClipboard(hackCode) {
+function fetchHackCode(gameMode) {
+    const rawUrls = {
+        GameMode1: 'https://raw.githubusercontent.com/therealgliz/blooket-hacks/refs/heads/main/blook-rush/setBlooks.js',
+        GameMode2: 'https://raw.githubusercontent.com/therealgliz/blooket-hacks/refs/heads/main/cafe/setCash.js',
+        GameMode3: 'https://raw.githubusercontent.com/therealgliz/blooket-hacks/refs/heads/main/crazy-kingdom/maxStats.js',
+        GameMode4: 'https://raw.githubusercontent.com/therealgliz/blooket-hacks/refs/heads/main/crypto-hack/setCrypto.js',
+        GameMode5: 'https://raw.githubusercontent.com/therealgliz/blooket-hacks/refs/heads/main/deceptive-dinos/setFossils.js',
+        GameMode6: 'https://raw.githubusercontent.com/therealgliz/blooket-hacks/refs/heads/main/fishing-frenzy/setWeight.js',
+        GameMode7: 'https://raw.githubusercontent.com/therealgliz/blooket-hacks/refs/heads/main/gold/setGold.js',
+        GameMode8: 'https://raw.githubusercontent.com/therealgliz/blooket-hacks/refs/heads/main/racing/instantWin.js',
+        GameMode9: 'https://raw.githubusercontent.com/therealgliz/blooket-hacks/refs/heads/main/tower-defense/setCash.js',
+        GameMode10: 'https://raw.githubusercontent.com/therealgliz/blooket-hacks/refs/heads/main/tower-of-doom/setCoins.js'
+    };
+
+    fetch(rawUrls[gameMode])
+        .then(response => response.text())
+        .then(text => {
+            copyToClipboard(text);
+        })
+        .catch(error => {
+            alert('Failed to fetch the code: ' + error.message);
+        });
+}
+
+function copyToClipboard(text) {
     const textArea = document.createElement('textarea');
-    textArea.value = hackCode;
+    textArea.value = text;
     document.body.appendChild(textArea);
     textArea.select();
     document.execCommand('copy');
     document.body.removeChild(textArea);
-    alert('Hack code copied to clipboard: ' + hackCode);
+    alert('Code copied to clipboard!');
 }
 </script>
-
 </body>
 </html>
